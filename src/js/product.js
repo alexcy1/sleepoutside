@@ -61,16 +61,3 @@ async function addToCartHandler(e) {
 qs("#addToCart").addEventListener("click", addToCartHandler);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
