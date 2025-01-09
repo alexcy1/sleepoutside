@@ -27,35 +27,36 @@
 
 
 
-const baseURL = '../json';
+
+
+function convertToJson(res) {
+  if (res.ok) {
+    return res.json();
+  } else {
+    throw new Error("Bad Response");
+  }
+}
 
 export default class ProductData {
   constructor(category) {
     this.category = category;
-    this.path = `${baseURL}/${this.category}.json`;
+    // Use an absolute path for the JSON file
+    this.path = `/json/${this.category}.json`;
   }
 
-  async getData() {
-    try {
-      const response = await fetch(this.path);
-      if (!response.ok) {
-        throw new Error('Bad Response');
-      }
-      const data = await response.json();
-      return data;
-    } catch (err) {
-      console.error('Error fetching data:', err);
-      throw err;
-    }
+  getData() {
+    return fetch(this.path)
+      .then(convertToJson)
+      .then((data) => data);
   }
 
   async findProductById(id) {
     try {
       const products = await this.getData();
       return products.find((item) => item.Id === id);
-    } catch (err) {
-      console.error('Error finding product:', err);
-      throw err;
+    } catch (error) {
+      console.error("Error finding product by ID:", error);
+      throw error;
     }
   }
 }
