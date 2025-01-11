@@ -60,7 +60,10 @@ export default class ProductData {
 
   async getData() {
     try {
-      const response = await fetch(this.path);
+      //week 01 individual activity solution: JSON path was wrong
+      const response = await fetch('../json/tents.json');
+
+      //const response = await fetch(this.path);
       if (!response.ok) {
         throw new Error(`Bad Response: ${response.status}`);
       }
