@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Outside | Home</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="./js/renderProducts.js" type="module"></script>
+    <script src="./js/renderHeaderFooter.js" defer></script>
+    <script type="module" src="./js/cartCount.js"></script>
+    <script type="module" src="./js/search.js" defer></script>
+
+  </head>
+  <body>
+    <header class="divider"></header>
+
+    <main class="divider">
+      <div class="hero">
+        <img
+          src="/images/banner-sm.jpg"
+          srcset="images/banner-sm.jpg 500w, images/banner.jpg"
+          alt="image of a high mountain lake"
+        />
+        <div class="logo logo--square">
+          <img src="/images/noun_Tent_2517.svg" alt="tent image for logo">
+          <div>Sleep<span class="highlight">Outside</span></div>
+        </div>
+      </div>
+
+      <section class="products">
+        <h2>Tents</h2>
+        <p>Explore our <a href="index.html">product categories</a> to find the perfect gear for your outdoor adventures.</p>
+
+        <!-- Sort Dropdown -->
+        <div class="sort-container">
+          <label for="sort-options">Sort by:</label>
+          <select id="sort-options">
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+            <option value="price-asc">Price (Low to High)</option>
+            <option value="price-desc">Price (High to Low)</option>
+          </select>
+        </div>
+
+       <!-- Product list container -->
+      <ul class="product-list"></ul>
+      </section>
+    </main>
+
+     <footer></footer>
+
+  </body>
+</html>
